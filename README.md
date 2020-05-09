@@ -6,7 +6,7 @@ Con algunos cambios con respecto al proyecto original, usando hooks.
 ## Built With
 
 * [React](https://es.reactjs.org/)
-* [API ]()
+* [OMDb API](http://www.omdbapi.com/)
 * [Bulma](https://bulma.io/)
 
 
