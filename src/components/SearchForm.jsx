@@ -15,7 +15,7 @@ const SearchForm = props => {
         e.preventDefault();
         const res = await fetch(`${URL}&s=${inputMovie}`);
         const data = await res.json();
-        const {Search, totalResults } = data;
+        const {Search = [], totalResults = [] } = data;
         console.log({Search, totalResults });
         props.onResults(Search);
     }
