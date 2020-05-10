@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 
 const Movie = props => {
-    const { poster, title, year } = props;
+    const { id, poster, title, year } = props;
     return ( 
-        <div className="card">
+        <a href={`?id=${id}`} className="card">
             <div className="card-image">
                 <figure className="image">
                     <img src={poster} alt={title}/>
@@ -19,7 +19,7 @@ const Movie = props => {
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
      );
 }
  
@@ -27,6 +27,7 @@ export default Movie;
 
 
 Movie.propTypes = {
+    id: PropTypes.string,
     title: PropTypes.string,
     year: PropTypes.string,
     poster: PropTypes.string

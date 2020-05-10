@@ -13,6 +13,7 @@ const MoviesList = props => {
                     return (
                         <div key={movie.imdbID} className="MoviesList-item">
                             <Movie 
+                               id= {movie.imdbID}
                                title={movie.Title}
                                year={movie.Year}
                                poster={movie.Poster}/>
