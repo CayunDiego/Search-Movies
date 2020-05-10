@@ -6,12 +6,12 @@ const URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
 
 const Detail = props => {
     const [movie, setMovie] = useState({})
-    const { id } = props;
+    const { movieId } = props.match.params;
     const { Title, Poster, Actors, Metascore, Plot} = movie;
 
     useEffect(() => {
-       _fetchMovie(id);
-    }, [id])
+       _fetchMovie(movieId);
+    }, [movieId])
 
     const _fetchMovie = async id => {
         const res = await fetch(`${URL}&i=${id}`);
@@ -19,7 +19,7 @@ const Detail = props => {
         setMovie(data);
     }
 
-    const _goBack = e => {
+    const _goBack = () => {
         window.history.back();
     }
 
@@ -38,5 +38,10 @@ const Detail = props => {
 export default Detail;
 
 Detail.propTypes = {
-    id: PropTypes.string
+    match: PropTypes.shape({
+        params: PropTypes.object,
+        isExact: PropTypes.bool,
+        path: PropTypes.string,
+        url: PropTypes.string
+    })
 }
